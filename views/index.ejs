@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/1.0.8/push.min.js" integrity="sha512-eiqtDDb4GUVCSqOSOTz/s/eiU4B31GrdSb17aPAA4Lv/Cjc8o+hnDvuNkgXhSI5yHuDvYkuojMaQmrB5JB31XQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/push.js/1.0.12/push.min.js"></script>    
+ 
+    
+    <title>Push-notification</title>
+
+    <script>
+        
+        function start(){
+            Push.create("Hello!", 
+            {
+                
+                body:  document.getElementById("message").textContent,
+                timeout: 4000,
+                onClick: function () 
+                {
+                    window.focus();
+                    this.close();
+                }
+            });
+
+        }
+       
+    </script>
+    
+    
+</head>
+<body  
+    style="background: url(https://images.unsplash.com/photo-1619502735729-13b7525f13e1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80); 
+    padding: 70px 0;
+    text-align: center;">
+
+    <div>
+        <h1 class="message">
+            Push notification
+            <br>
+            <p id="message" hidden>
+                <%=JSON.stringify(message.messages)%>
+            </p>
+            
+            <button  Onclick="start()" style="background-color:  #3EBBAD;">
+                click the button to get Push-notifications
+            </button>
+        </h1>
+    </div>
+    
+    
+    
+
+    
+</body>
+</html>
